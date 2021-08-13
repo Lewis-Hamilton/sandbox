@@ -3,3 +3,20 @@
 <a href="./home.html">Home</a>
 
 <a href="https://www.codewars.com/kata/540954232a3259755d000039/javascript">Challenge info</a>
+
+<h1>Friday the 13th Calculator</h1>
+<h2>Please enter your start and end years below:</h2>
+<h3>Start Year</h3>
+<input id="start"></input>
+<h3>End Year</h3>
+<input id="end"></input>
+<button onclick="fridayTheThirteenths(startYear, endYear)">Calculate</button>
+
+<script>
+    startYear = new Date(document.getElementById("start").value,0,1)
+    endYear = new Date(document.getElementById("end").value,11,31)
+
+    function fridayTheThirteenths(start, end) {
+        console.log(start + end)
+    }
+</script>
