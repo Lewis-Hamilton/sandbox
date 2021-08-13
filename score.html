@@ -1,0 +1,24 @@
+<meta charset=utf8>
+
+<a href="./home.html">Home</a>
+
+<h1 id="score"></h1>
+<button onClick=(addScore())>+</button>
+<button onClick=(resetScore())>Reset</button>
+
+<script>
+    var score = 0;
+    document.getElementById("score").innerHTML = score;
+    
+    function addScore() {
+        score++
+        document.getElementById("score").innerHTML = score;
+    }
+
+    function resetScore() {
+        score = 0
+        document.getElementById("score").innerHTML = score;
+    }
+
+    
+</script>
