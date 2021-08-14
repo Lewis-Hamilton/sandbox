@@ -2,32 +2,52 @@
 
 <a href="./home.html">Home</a>
 
-<h1 id="hello">Hello World</h1>
+<p id="hello">Hello World</p>
 
 <button onClick=(reset())>Reset</button>
 
 <p>Enter a color:</p>
 <input id="color"/>
-<button onClick=(colorChanger())>Change</button>
+<button onClick="(colorChanger(document.getElementById('color').value))">Change</button>
+<p>Or choose a preset:</p>
+<button onClick="(colorChanger('red'))">Red</button>
+<button onClick="(colorChanger('green'))">Green</button>
+<button onClick="(colorChanger('blue'))">Blue</button>
+<button onClick="(colorChanger('black'))">Black</button>
+<button onClick="(colorChanger('purple'))">Purple</button>
+<button onClick="(colorChanger('yellow'))">Yellow</button>
+<button onClick="(colorChanger('orange'))">Orange</button>
+<button onClick="(colorChanger('brown'))">Brown</button>
 
 <p>Enter a font size:</p>
 <input id="font"/>
-<button onClick=(sizeChanger())>Change</button>
+<button onClick="(sizePicker(document.getElementById('font').value))">Change</button>
+<p>Or use the buttons below</p>
+<button onClick=(sizeChanger(1))>+</button>
+<button onClick=(sizeChanger(-1))>-</button>
 
 
 <script>
     changer = document.getElementById("hello")
+    size = 32;
+    changer.style.fontSize = size;
+    
     function reset() {
         changer.style=null;
+        changer.style.fontSize = 32
     }
 
-    function colorChanger() {
-        userColor=document.getElementById("color").value;
-        changer.style.color=userColor;
+    function colorChanger(buttonColor) {
+        changer.style.color=buttonColor;
     }
 
-    function sizeChanger() {
-        userFont=document.getElementById("font").value;
-        changer.style.fontSize=userFont;
+    function sizePicker(userFont) {
+        size = parseInt(userFont)
+        changer.style.fontSize = size;
+    }
+
+    function sizeChanger(fontButton) {
+        size= size + fontButton;
+        changer.style.fontSize = size;
     }
 </script>
