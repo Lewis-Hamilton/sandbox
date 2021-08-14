@@ -1,0 +1,33 @@
+<meta charset=utf8>
+
+<a href="./home.html">Home</a>
+
+<h1 id="hello">Hello World</h1>
+
+<button onClick=(reset())>Reset</button>
+
+<p>Enter a color:</p>
+<input id="color"/>
+<button onClick=(colorChanger())>Change</button>
+
+<p>Enter a font size:</p>
+<input id="font"/>
+<button onClick=(sizeChanger())>Change</button>
+
+
+<script>
+    changer = document.getElementById("hello")
+    function reset() {
+        changer.style=null;
+    }
+
+    function colorChanger() {
+        userColor=document.getElementById("color").value;
+        changer.style.color=userColor;
+    }
+
+    function sizeChanger() {
+        userFont=document.getElementById("font").value;
+        changer.style.fontSize=userFont;
+    }
+</script>
