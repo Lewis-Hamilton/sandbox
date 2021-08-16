@@ -1,8 +1,10 @@
 import React from "react";
+import {BrowserRouter as Router, Link} from "react-router-dom";
+
 
 const Function = () => {
     return (
-        <a href="./home.js">Home</a>
+<Link to="/">Home</Link>
     )
 
     function myFunction(name, age) {
@@ -10,7 +12,8 @@ const Function = () => {
     }
 
     function myArray(number) {
-        newArray = [];
+        var newArray = [];
+        var i = 0;
 
         for(i = 1; i <= number; i++){
         newArray.push(i);
