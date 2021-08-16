@@ -1,27 +1,22 @@
 import React from "react";
-import {BrowserRouter as Router, Link} from "react-router-dom";
+import {Link} from "react-router-dom";
+import Bill from './bill.js';
+import Test from './myArray.js';
 
+function newFunction() {
+    console.log("testing")
+}
 
-const Function = () => {
+function Function() {
     return (
-<Link to="/">Home</Link>
+        <div>
+        <Link to="/">Home</Link>
+        <Bill name="Bill" age="69"></Bill>
+        <Test number="8"></Test>
+        </div>
     )
 
-    function myFunction(name, age) {
-        return alert(name + ' is ' + age + ' years old.');
-    }
-
-    function myArray(number) {
-        var newArray = [];
-        var i = 0;
-
-        for(i = 1; i <= number; i++){
-        newArray.push(i);
-        }
-
-        return newArray;
-    }
-    console.log(myArray(69));
 }
 
 export default Function;
+export default newFunction;
