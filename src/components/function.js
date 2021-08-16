@@ -1,8 +1,10 @@
-<meta charset=utf8>
+import React from "react";
 
-<a href="./home.html">Home</a>
+const Function = () => {
+    return (
+        <a href="./home.js">Home</a>
+    )
 
-<script>
     function myFunction(name, age) {
         return alert(name + ' is ' + age + ' years old.');
     }
@@ -17,4 +19,6 @@
         return newArray;
     }
     console.log(myArray(69));
-</script>
+}
+
+export default Function;
