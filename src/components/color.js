@@ -9,33 +9,28 @@ class Color extends React.Component {
             color: '',
             font: 32
         }
-        this.reset = this.reset.bind(this);
-        this.colorInput = this.colorInput.bind(this);
-        this.colorButton = this.colorButton.bind(this);
-        this.fontInput = this.fontInput.bind(this);
-        this.fontButton = this.fontButton.bind(this);
     }
 
-    reset() {
+    reset=() => {
         this.setState({
             color: '',
             font: 32
         })
     }
 
-    colorInput(event) {
+    colorInput=(event) => {
         this.setState({color: event.target.value})
     }
 
-    colorButton(buttonColor) {
+    colorButton=(buttonColor) => {
         this.setState({color: buttonColor})
     }
 
-    fontInput(event) {
+    fontInput=(event) => {
         this.setState({font: parseInt(event.target.value)})
     }
 
-    fontButton(increment) {
+    fontButton=(increment) => {
         this.setState({font: this.state.font + increment})
     }
 
