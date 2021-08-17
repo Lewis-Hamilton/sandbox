@@ -6,9 +6,9 @@ const Home = () => {
 
             <ol>
                 <li><Link to="/function">Function</Link></li>
-                {/* <li><a href="./friday.js">Friday</a></li>
-                <li><a href="./input.js">Input</a></li>
-                <li><a href="./object.js">Object</a></li>
+                <li><Link to="/friday">Friday</Link></li>
+                <li><Link to="/input">Input</Link></li>
+                {/* <li><a href="./object.js">Object</a></li>
                 <li><a href="./score.js">Score</a></li>
                 <li><a href="./color.js">Color</a></li> */}
             </ol>
