@@ -8,15 +8,23 @@ class Friday extends React.Component {
             startYear: '',
             endYear: ''
         }
+        this.startChange = this.startChange.bind(this);
+        this.endChange = this.endChange.bind(this);
         this.fridayTheThirteenths = this.fridayTheThirteenths.bind(this);
     }
 
-    fridayTheThirteenths() {
-        console.log(this.state.startYear + this.state.endYear)
+    startChange(event) {
+        this.setState({startYear: event.target.value});
     }
 
-    test() {
-        console.log("test")
+    endChange(event) {
+        this.setState({endYear: event.target.value});
+    }
+
+    fridayTheThirteenths() {
+        var startYear = new Date(this.state.startYear,0,1)
+        var endYear = new Date(this.state.endYear,11,31)
+        console.log(startYear + ' ' + endYear)
     }
     
     render() {
@@ -27,12 +35,10 @@ class Friday extends React.Component {
         <h1>Friday the 13th Calculator</h1>
         <h2>Please enter your start and end years below:</h2>
         <h3>Start Year</h3>
-        <input id="start" value={this.state.startYear}></input>
+        <input id="start" value={this.state.startYear} onChange={this.startChange}></input>
         <h3>End Year</h3>
-        <input id="end" value={this.state.endYear}></input>
+        <input id="end" value={this.state.endYear} onChange={this.endChange}></input>
         <button onClick={this.fridayTheThirteenths}>Calculate</button>
-        <button onClick={this.test}>test</button>
-
         </div>
     )
     }
