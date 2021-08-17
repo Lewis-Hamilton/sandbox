@@ -9,7 +9,7 @@ const Home = () => {
                 <li><Link to="/friday">Friday</Link></li>
                 <li><Link to="/input">Input</Link></li>
                 <li><Link to="/object">Object</Link></li>
-                {/* <li><a href="./score.js">Score</a></li> */}
+                <li><Link to="/score">Score</Link></li>
                 {/* <li><a href="./color.js">Color</a></li> */}
             </ol>
 

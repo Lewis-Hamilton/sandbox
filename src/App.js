@@ -3,6 +3,7 @@ import Function from './components/function.js';
 import Friday from './components/friday.js';
 import Input from './components/input.js';
 import ObjectPage from './components/object.js';
+import Score from './components/score.js';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <Route exact path="/friday" component={Friday}></Route>
       <Route exact path="/input" component={Input}></Route>
       <Route exact path="/object" component={ObjectPage}></Route>
+      <Route exact path="/score" component={Score}></Route>
       </Switch>
     </Router>
 
