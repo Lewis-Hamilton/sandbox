@@ -1,70 +1,36 @@
-import React from "react";
+import React, {useState} from "react";
 import {Link} from "react-router-dom";
 
-class Color extends React.Component {
-    constructor(props){
-        super(props)
-        this.state={
-            text: 'Hello World',
-            color: '',
-            font: 32
-        }
+export default function Color () {
+    const [color, setColor] = useState('');
+    const [font, setFont] = useState(32);
+
+    const textStyle = {
+        color: color,
+        fontSize: font
     }
 
-    reset=() => {
-        this.setState({
-            color: '',
-            font: 32
-        })
-    }
-
-    colorInput=(event) => {
-        this.setState({color: event.target.value})
-    }
-
-    colorButton=(buttonColor) => {
-        this.setState({color: buttonColor})
-    }
-
-    fontInput=(event) => {
-        this.setState({font: parseInt(event.target.value)})
-    }
-
-    fontButton=(increment) => {
-        this.setState({font: this.state.font + increment})
-    }
-
-    render() {
-        var textStyle = {
-            color: this.state.color,
-            fontSize: this.state.font
-        }
-    return (
+    return(
         <div>
             <Link to="/">Home</Link>
-            <p style={textStyle}>{this.state.text}</p>
-            <button onClick={this.reset}>Reset</button>
-
+            <p style={textStyle}>Hello World</p>
+            <button onClick={() => setColor('') + setFont(32)}>Reset</button>
             <p>Enter a color</p>
-            <input onChange={this.colorInput}/>
+            <input onChange={e => setColor(e.target.value)}/>
             <p>Or choose a preset:</p>
-            <button onClick={() => this.colorButton('red')}>Red</button>
-            <button onClick={() => this.colorButton('Green')}>Green</button>
-            <button onClick={() => this.colorButton('Blue')}>Blue</button>
-            <button onClick={() => this.colorButton('Black')}>Black</button>
-            <button onClick={() => this.colorButton('Purple')}>Purple</button>
-            <button onClick={() => this.colorButton('Yellow')}>Yellow</button>
-            <button onClick={() => this.colorButton('Orange')}>Orange</button>
-            <button onClick={() => this.colorButton('Brown')}>Brown</button>
-
+            <button onClick={() => setColor('red')}>Red</button>
+            <button onClick={() => setColor('green')}>Green</button>
+            <button onClick={() => setColor('blue')}>Blue</button>
+            <button onClick={() => setColor('black')}>Black</button>
+            <button onClick={() => setColor('purple')}>Purple</button>
+            <button onClick={() => setColor('yellow')}>Yellow</button>
+            <button onClick={() => setColor('orange')}>Orange</button>
+            <button onClick={() => setColor('brown')}>Brown</button>
             <p>Enter a font size:</p>
-            <input onChange={this.fontInput}/>
+            <input onChange={e => setFont(parseInt(e.target.value))}/>
             <p>Or use the buttons below</p>
-            <button onClick={() => this.fontButton(1)}>+</button>
-            <button onClick={() => this.fontButton(-1)}>-</button>
+            <button onClick={() => setFont(font+1)}>+</button>
+            <button onClick={() => setFont(font-1)}>-</button>
         </div>
     )
-    }
 }
-
-export default Color;
