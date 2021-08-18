@@ -11,7 +11,7 @@ export default function Input() {
   return(
     <div>
       <Link to="/">Home</Link>
-      <input value={money} onChange={e => setMoney(e.target.value)}/>
+      <input onChange={e => setMoney(e.target.value)}/>
       <button onClick={() => calculateMoney()}>Calculate</button>
     </div>
   )

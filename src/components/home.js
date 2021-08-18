@@ -11,6 +11,7 @@ const Home = () => {
                 <li><Link to="/object">Object</Link></li>
                 <li><Link to="/score">Score</Link></li>
                 <li><Link to="/color">Color</Link></li>
+                <li><Link to="/array">Array</Link></li>
             </ol>
 
     )
