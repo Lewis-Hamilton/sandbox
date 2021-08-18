@@ -1,32 +1,19 @@
-import React from "react";
+import React, {useState} from "react";
 import {Link} from "react-router-dom";
 
-class Input extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {money: ''};
-    
-        this.handleChange = this.handleChange.bind(this);
-        this.calculateMoney = this.calculateMoney.bind(this);
-      }
-    
-      handleChange(event) {
-        this.setState({money: event.target.value});
-      }
+export default function Input() {
+  const [money, setMoney] = useState('');
 
-    calculateMoney() {
-        console.log(this.state.money/2)
-      }
-    
-      render() {
-        return (
-            <div>
-            <Link to="/">Home</Link>
-              <input type="text" value={this.state.money} onChange={this.handleChange} />
-            <button onClick={this.calculateMoney}>Calculate</button>
-          </div>
-        )
-    }
-}
+  const calculateMoney = ()  => {
+    console.log(money/2)
+  }
 
-export default Input;
+  return(
+    <div>
+      <Link to="/">Home</Link>
+      <input value={money} onChange={e => setMoney(e.target.value)}/>
+      <button onClick={() => calculateMoney()}>Calculate</button>
+    </div>
+  )
+
+};
