@@ -1,5 +1,10 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import Typography from "@material-ui/core/Typography";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemText from "@material-ui/core/ListItemText";
+import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
 
 export default function Array() {
   const [people, setPeople] = useState([
@@ -14,17 +19,26 @@ export default function Array() {
 
   return (
     <div>
-      <Link to="/">Home</Link>
-      <h1>{people[0].name}</h1>
-      <ul>
+      <Typography variant="h1">{people[0].name}</Typography>
+      <List>
         {people.map((people) => (
-          <li>{people.name}</li>
+          <ListItem>
+            <ListItemText>{people.name}</ListItemText>
+          </ListItem>
         ))}
-      </ul>
-      <input onChange={(e) => setUserName(e.target.value)}></input>
-      <button onClick={() => setPeople(people.concat({ name: userName }))}>
+      </List>
+      <TextField
+        label="Enter a Name"
+        variant="outlined"
+        onChange={(e) => setUserName(e.target.value)}
+      />
+      <Button
+        variant="contained"
+        color="primary"
+        onClick={() => setPeople(people.concat({ name: userName }))}
+      >
         Add Person
-      </button>
+      </Button>
     </div>
   );
 }
