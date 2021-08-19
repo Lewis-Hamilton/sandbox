@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 
-function ObjectPage() {
+export default function ObjectPage() {
     const women = {
         name: "Nancy",
         age: 24
@@ -12,5 +12,3 @@ function ObjectPage() {
         <Link to="/">Home</Link>
     )
 }
-
-export default ObjectPage;

@@ -1,33 +1,14 @@
-import React from "react";
+import React, {useState} from "react";
 import {Link} from "react-router-dom";
 
-class Score extends React.Component {
-    constructor(props){
-        super(props);
-        this.state = {score: 0}
-
-        this.addScore = this.addScore.bind(this);
-        this.resetScore = this.resetScore.bind(this);
-    }
-
-    addScore() {
-        this.setState({score: this.state.score + 1})
-    }
-
-    resetScore() {
-        this.setState({score: 0})
-    }
-
-    render() {
-    return (
+export default function Score() {
+    const [score, setScore] = useState(0);
+        return (
         <div>
         <Link to="/">Home</Link>
-        <h1>{this.state.score}</h1>
-        <button onClick={this.addScore}>+</button>
-        <button onClick={this.resetScore}>Reset</button>
+        <h1>{score}</h1>
+        <button onClick={() => setScore(score+1)}>+</button>
+        <button onClick={() => setScore(0)}>Reset</button>
         </div>
     )
-    }
 }
-
-export default Score;
