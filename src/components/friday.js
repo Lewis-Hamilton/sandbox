@@ -1,5 +1,8 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import Button from "@material-ui/core/Button";
+import TextField from "@material-ui/core/TextField";
+import Typography from "@material-ui/core/Typography";
+import Link from "@material-ui/core/Link";
 
 export default function Friday() {
   const [startYear, setStartYear] = useState("");
@@ -7,23 +10,37 @@ export default function Friday() {
 
   return (
     <div>
-      <Link to="/">Home</Link>
-      <a href="https://www.codewars.com/kata/540954232a3259755d000039/javascript">
-        Challenge info
-      </a>
-      <h1>Friday the 13th Calculator</h1>
-      <h2>Please enter your start and end years below:</h2>
-      <h3>Start Year</h3>
-      <input onChange={(e) => setStartYear(e.target.value)}></input>
-      <h3>End Year</h3>
-      <input onChange={(e) => setEndYear(e.target.value)}></input>
-      <button
+      <Typography variant="h3">Friday the 13th Calculator</Typography>
+      <Typography>
+        <Link
+          href="https://www.codewars.com/kata/540954232a3259755d000039/javascript"
+          target="_blank"
+        >
+          Challenge info
+        </Link>
+      </Typography>
+      <Typography variant="h5">
+        Please enter your start and end years below:
+      </Typography>
+      <TextField
+        label="Start Year"
+        variant="outlined"
+        onChange={(e) => setStartYear(e.target.value)}
+      ></TextField>
+      <TextField
+        label="End Year"
+        variant="outlined"
+        onChange={(e) => setEndYear(e.target.value)}
+      ></TextField>
+      <Button
+        variant="contained"
+        color="primary"
         onClick={() =>
           console.log(new Date(startYear) + " " + new Date(endYear))
         }
       >
         Calculate
-      </button>
+      </Button>
     </div>
   );
 }
