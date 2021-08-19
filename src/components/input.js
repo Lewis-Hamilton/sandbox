@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
 
 export default function Input() {
   const [money, setMoney] = useState("");
@@ -10,9 +11,18 @@ export default function Input() {
 
   return (
     <div>
-      <Link to="/">Home</Link>
-      <input onChange={(e) => setMoney(e.target.value)} />
-      <button onClick={() => calculateMoney()}>Calculate</button>
+      <TextField
+        label="Enter $ Amount"
+        variant="outlined"
+        onChange={(e) => setMoney(e.target.value)}
+      />
+      <Button
+        variant="contained"
+        color="primary"
+        onClick={() => calculateMoney()}
+      >
+        Calculate
+      </Button>
     </div>
   );
 }
