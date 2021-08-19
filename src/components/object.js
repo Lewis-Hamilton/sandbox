@@ -1,5 +1,5 @@
+import { Typography } from "@material-ui/core";
 import React from "react";
-import { Link } from "react-router-dom";
 
 export default function ObjectPage() {
   const women = {
@@ -7,6 +7,9 @@ export default function ObjectPage() {
     age: 24,
   };
 
-  console.log(women.name + " is " + women.age);
-  return <Link to="/">Home</Link>;
+  return (
+    <Typography>
+      {women.name} is {women.age}
+    </Typography>
+  );
 }
