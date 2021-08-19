@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import Button from "@material-ui/core/Button";
 
 export default function Function() {
   const newFunction = (name, age) => {
@@ -8,8 +8,13 @@ export default function Function() {
 
   return (
     <div>
-      <Link to="/">Home</Link>
-      <button onClick={() => newFunction("Bill", 69)}>Bill</button>
+      <Button
+        variant="contained"
+        color="primary"
+        onClick={() => newFunction("Bill", 69)}
+      >
+        Bill
+      </Button>
     </div>
   );
 }
