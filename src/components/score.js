@@ -1,14 +1,21 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Button, Typography } from "@material-ui/core";
 
 export default function Score() {
   const [score, setScore] = useState(0);
   return (
     <div>
-      <Link to="/">Home</Link>
-      <h1>{score}</h1>
-      <button onClick={() => setScore(score + 1)}>+</button>
-      <button onClick={() => setScore(0)}>Reset</button>
+      <Typography variant="h1">{score}</Typography>
+      <Button
+        variant="contained"
+        color="primary"
+        onClick={() => setScore(score + 1)}
+      >
+        +
+      </Button>
+      <Button variant="contained" color="secondary" onClick={() => setScore(0)}>
+        Reset
+      </Button>
     </div>
   );
 }
